@@ -1,0 +1,20 @@
+@use "sass:math";
+@import './variables.scss';
+
+@function em($pixels, $context: $browser-context) {
+    $value: math.div($pixels, $context) * 1em;
+    @return math.div(round($value * 1000), 1000);
+}
+
+@function vw($px-vw, $base-vw: $widthDefault) {
+    $value: math.div(($px-vw * 100vw), $base-vw);
+    @return math.div(round($value * 1000), 1000);
+}
+
+@function px($pixels) {
+    @return $pixels * 1px;
+}
+
+@function witdhToPaddings($px-vw, $base-vw: $widthDefault) {
+    @return vw(math.div(($base-vw - $px-vw), 2), $base-vw);
+}

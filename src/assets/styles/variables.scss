@@ -1,0 +1,73 @@
+$browser-context: 14;
+
+// Header
+$header-height: 100;
+
+$header-background-color: rgba(16, 16, 29, 0.9);
+
+$header-logo-color-primary: rgba(255, 255, 255, 1);
+$header-logo-color-secondary: rgba(66, 169, 237, 1);
+
+$header-nav-item-color: rgba(255, 255, 255, 1);
+$header-nav-item-color-accent: rgba(67, 171, 240, 1);
+
+$header-nav-item-font-size: 13;
+
+$header-burger-activation-breakpoint: 1024;
+
+// Intro
+$intro-mobi-background-color: rgba(255, 255, 255, 0.6);
+
+// Order
+$order-subtitle-color: rgba(187, 187, 187, 1);
+
+$order-icon-background-color: rgba(62, 156, 220, 1);
+$order-icon-border-color: rgba(40, 102, 144, 1);
+
+$order-icon-color: rgba(255, 255, 255, 1);
+
+// Texts
+$text-color-primary: rgba(0, 0, 0, 1);
+$text-color-secondary: rgba(255, 255, 255, 1);
+$text-color-accent: rgba(62, 156, 220, 1);
+
+// Buttons
+$button-font-size: 15;
+
+$button-text-color-primary: rgba(255, 255, 255, 1);
+$button-bg-color-primary: rgba(62, 156, 220, 1);
+$button-border-color-primary: rgba(255, 255, 255, 1);
+
+$button-text-color-secondary: rgba(42, 43, 48, 1);
+$button-bg-color-secondary: rgba(255, 255, 255, 1);
+$button-border-color-secondary: rgba(111, 109, 123, 1);
+
+// Forms
+$form-input-font-size: 18;
+
+$form-input-color: rgba(39, 39, 51, 1);
+$form-input-bg-color: rgba(255, 255, 255, 0.85);
+$form-input-border-color: rgba(255, 255, 255, 1);
+
+$form-input-file-bg-color: rgba(255, 255, 255, 1);
+$form-input-file-border-color: rgba(62, 156, 220, 1);
+$form-input-file-font-size: 15;
+
+$form-slider-background-color: rgba(255, 255, 255, 0.7);
+
+// Icons
+$icon-bg-color: rgba(62, 156, 220, 1);
+$icon-border-color: rgba(40, 102, 144, 1);
+
+// Width and containers
+$widthDefault: 1920;
+$widthSizeL: 1440;
+$widthSizeM: 768;
+$widthSizeS: 480;
+$widthSizeXS: 480;
+
+$containerDefault: 1172;
+$containerSizeL: 1200;
+// $containerSizeM: 580;
+$containerSizeS: 440;
+// $containerSizeM: 580;
