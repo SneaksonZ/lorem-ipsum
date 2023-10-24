@@ -2,7 +2,7 @@
     <div>
         <label class="form-file-button form-file__button" for="fileInput"> 
             <FileIcon 
-                class="form-file-button__icon"
+                class="icon"
             />
             {{ fileInputText }} 
         </label>
@@ -58,8 +58,6 @@ export default {
     padding: em(12, $form-input-file-font-size) 0;
     overflow: hidden;
 
-    &__icon {
-        margin-right: em(10, $form-input-file-font-size);
-    }
+
 }
 </style>

@@ -3,7 +3,6 @@ import LoremOrderIcon from './LoremOrderIcon.vue';
 
 import LoremTitle from '../../.helpers/LoremTitle.vue';
 import LoremButton from '../../.helpers/LoremButton.vue';
-import LoremForm from '../../.helpers/LoremForm.vue';
 import LoremFormInput from '../../.helpers/LoremFormInput.vue';
 import LoremFormSlider from '../../.helpers/LoremFormSlider.vue';
 import LoremFormFileInput from '../../.helpers/LoremFormFileInput.vue';
@@ -20,7 +19,6 @@ export default {
         LoremTitle,
         LoremButton,
         LoremOrderIcon,
-        LoremForm,
         LoremFormInput,
         LoremFormSlider,
         LoremFormFileInput
@@ -53,6 +51,7 @@ export default {
                 action: '#',
                 method: 'post',
                 name: 'orderForm',
+                enctype: 'multipart/form-data',
                 inputs: [
                     {
                         type: 'dropdown',
@@ -108,7 +107,7 @@ export default {
             <div class="order__wrapper">
                 <div class="order__header">
                     <lorem-title class="order-title order__title">Оформление 
-                        <span class="order-title_accent">
+                        <span class="order__title_accent">
                             заказа
                         </span>
                     </lorem-title>
@@ -129,12 +128,18 @@ export default {
                         </span>
                     </div>
                 </div>
-                <lorem-form
-                    class="order-form order__form"
+
+                <form 
+                    class="order-form"
                     :action="form.action"
                     :method="form.method"
                     :name="form.name"
+                    :enctype="enctype"
+                    :target="target"
+                    :novalidate="isNovalidate"
                 >
+                    <div class="order-form__wrapper">
+
                         <component
                             class="order-form__item"
                             v-for="input in form.inputs"
@@ -167,12 +172,14 @@ export default {
                             :fileInputText="fileInput.startText"
                             :name="fileInput.name"
                         />
-                    <!-- <lorem-button
+                    </div>
+
+                    <lorem-button
                         class="order-form-button order-form__button"
                     >
                     Отправить
-                    </lorem-button> -->
-                </lorem-form>
+                    </lorem-button>
+                </form>
             </div>
         </div>
     </header>
@@ -205,7 +212,10 @@ $inputMargin: 30;
     }
 
     &__wrapper {
-        padding: em(120) 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: em(120) 0 em(150);
     }
 
     &__header {
@@ -213,7 +223,13 @@ $inputMargin: 30;
     }
 
     &__title {
-
+        font-size: em($titleContext);
+        font-weight: 800;
+        color: $text-color-secondary;
+        
+        &_accent {
+            color: $text-color-accent;
+        }
     }
 
     &__subtitle {
@@ -221,21 +237,13 @@ $inputMargin: 30;
     }
 
     &__steps {
+        width: 100%;
         margin: 0 em(-$spaceBetweenIcons);
     }
 
     &__form {
-        margin: em($spaceBetweenBlocksDefault - $inputMargin) em(-$spaceBetweenInputs) 0;
-    }
-}
-
-.order-title {
-    font-size: em($titleContext);
-    font-weight: 800;
-    color: $text-color-secondary;
-
-    &_accent {
-        color: $text-color-accent;
+        width: 100%;
+        margin-top: em($spaceBetweenBlocksDefault - $inputMargin);
     }
 }
 
@@ -276,8 +284,17 @@ $inputMargin: 30;
 }
 
 .order-form {
-    justify-content: center;
+    text-align: center;
+    width: 100%;
 
+    &__wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 em(-$spaceBetweenInputs);
+    }
+    
     &__item {
         min-width: em(270, $form-input-font-size);
         max-width: 100%;
@@ -332,6 +349,26 @@ $inputMargin: 30;
 
 .order-form-button {
     padding: em(17.5, $button-font-size) 0;
+}
+
+@media (max-width: px($widthSizeS)) {
+    .order-form {
+
+        &__item {
+            flex: auto;
+        }
+        
+        &__file {
+            width: 100%;
+        }
+
+        &__button {
+            width: 100%;
+        }
+    }
+    .order-form__item {
+        min-width: 0;
+    }
 }
 
 </style>

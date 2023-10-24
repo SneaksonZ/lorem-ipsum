@@ -3,6 +3,8 @@ $browser-context: 14;
 // Header
 $header-height: 100;
 
+$header-nav-item-font-size: 13;
+
 $header-background-color: rgba(16, 16, 29, 0.9);
 
 $header-logo-color-primary: rgba(255, 255, 255, 1);
@@ -11,9 +13,14 @@ $header-logo-color-secondary: rgba(66, 169, 237, 1);
 $header-nav-item-color: rgba(255, 255, 255, 1);
 $header-nav-item-color-accent: rgba(67, 171, 240, 1);
 
-$header-nav-item-font-size: 13;
 
 $header-burger-activation-breakpoint: 1024;
+
+// Footer
+$footer-background-color: rgba(61, 64, 80, 1);
+
+$footer-payments-color: rgba(195, 195, 195, 1);
+
 
 // Intro
 $intro-mobi-background-color: rgba(255, 255, 255, 0.6);
