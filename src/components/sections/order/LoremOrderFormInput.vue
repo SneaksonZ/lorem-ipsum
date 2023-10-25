@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: 'LoremFormInput',
+    name: 'LoremOrderFormInput',
     props: {
         type: {
             type: String,
@@ -32,7 +32,7 @@ export default {
 
 <template>
     <input 
-        class="form-input"
+        class="order-form-input"
         :type="type"
         :name="name"
         :placeholder="placeholder"
@@ -46,7 +46,7 @@ export default {
 @import 'src/assets/styles/variables.scss';
 @import 'src/assets/styles/functions.scss';
 
-.form-input {
+.order-form-input {
     font-size: em($form-input-font-size);
     color: $form-input-color;
     background-color: $form-input-bg-color;

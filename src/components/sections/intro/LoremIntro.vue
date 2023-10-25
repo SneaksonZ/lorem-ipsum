@@ -1,6 +1,5 @@
 <script>
 import LoremTitle from '../../.helpers/LoremTitle.vue';
-import LoremList from '../../.helpers/LoremList.vue';
 import LoremButton from '../../.helpers/LoremButton.vue';
 
 export default {
@@ -19,7 +18,6 @@ export default {
     },
     components: {
         LoremTitle,
-        LoremList,
         LoremButton,
     }
 }
@@ -35,11 +33,18 @@ export default {
                     dolor sit ametconsectetur
                     <span class="intro-title_accent">adipiscing</span>
                 </lorem-title>
-                <lorem-list
-                    class="intro__list"
-                    :title="list.title"
-                    :items="list.items"
-                />
+                <div class="intro-list-container intro__list">
+                    <h3 class="intro-list__title"> {{ list.title }} </h3>
+                    <ul class="intro-list" v-if="list.items.length">
+                        <li
+                            class="intro-list__item"
+                            v-for="item in list.items"
+                            :key="item.key"
+                        >
+                        {{ item }}
+                        </li>
+                    </ul>
+                </div>
                 <div class="intro__controls">
                     <lorem-button
                         class="intro-button intro__button"
@@ -70,6 +75,9 @@ $spaceBetweenButtons: 30;
 
 $blocksTopMarginDefault: 80;
 $blocksTopMarginSizeM: 40;
+
+$fontSizeDefault: 20;
+$fontSizeMobi: 16;
 
 .intro {
     position: relative;
@@ -125,6 +133,30 @@ $blocksTopMarginSizeM: 40;
     }
 }
 
+.intro-list {
+    font-size: em($fontSizeDefault);
+
+    &__title {
+        font-size: em($fontSizeDefault);
+        font-weight: 700;
+        line-height: em(24, $fontSizeDefault);
+        margin-bottom: em(10, $fontSizeDefault);
+    }
+
+    &__item {
+        line-height: em(24, $fontSizeDefault);
+
+        &:not(:last-child) {
+            margin-bottom: em(5, $fontSizeDefault);
+        }
+
+        &:before {
+            content: '-';
+            padding: 0 em(10, $fontSizeDefault); 
+        }
+    }
+}
+
 .intro-button {
     padding: em(15, $button-font-size) 0;
 }
@@ -159,6 +191,10 @@ $blocksTopMarginSizeM: 40;
             flex-wrap: wrap;
             margin: 0;
         }
+    }
+
+    .intro-list {
+        font-size: em($fontSizeMobi);
     }
 
     .intro-title {

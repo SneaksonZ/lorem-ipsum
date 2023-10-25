@@ -1,26 +1,29 @@
 <template>
     <div>
-        <label class="form-file-button form-file__button" for="fileInput"> 
-            <FileIcon 
-                class="icon"
+        <label class="order-form-file-button order-form-file__button" for="fileInput"> 
+            <lorem-text-iconed 
+                :iconPath="icon"
+                :iconSize="iconSize"
+                :iconColor="iconColor"
+                :text="fileInputText"
             />
-            {{ fileInputText }} 
         </label>
-        <input id="fileInput" class="form-file" type="file" ref="fileInput" @change="handleFileUpload" />
+        <input id="fileInput" class="order-form-file" type="file" ref="fileInput" @change="handleFileUpload" />
     </div>
 </template>
   
 <script>
-import FileIcon from '/src/assets/icons/FileIcon.vue';
+import LoremTextIconed from '../../.helpers/LoremTextIconed.vue';
 
 export default {
     data() {
         return {
-            fileInputText: 'ПРИКРЕПИТЬ ФАЙЛ'
+            fileInputText: 'ПРИКРЕПИТЬ ФАЙЛ',
+            icon: 'FileIcon.svg'
         }
     },
     components: {
-        FileIcon,
+        LoremTextIconed,
     },
     methods: {
         handleFileUpload() {
@@ -36,7 +39,7 @@ export default {
 @import 'src/assets/styles/variables.scss';
 @import 'src/assets/styles/functions.scss';
 
-.form-file {
+.order-form-file {
     display: none;
 
     &__button {
@@ -47,7 +50,7 @@ export default {
     }
 }
 
-.form-file-button {
+.order-form-file-button {
     display: flex;
     cursor: pointer;
     text-align: center;

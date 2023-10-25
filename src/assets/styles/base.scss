@@ -2,10 +2,6 @@ body {
   font-family: 'Lato', 'Raleway', 'Arial', sans-serif;
 }
 
-.icon {
-  margin-right: em(10, $form-input-file-font-size);
-}
-
 .container {
   height: 100%;
   padding: 0 witdhToPaddings($containerDefault, $widthDefault);

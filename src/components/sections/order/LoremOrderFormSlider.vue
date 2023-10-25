@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: 'LoremFormSlider',
+    name: 'LoremOrderFormSlider',
     props: {
         name: {
             type: String,
@@ -28,7 +28,7 @@ export default {
 
 <template>
     <input 
-        class="form-slider"
+        class="order-form-slider-input"
         type="range"
         :name="name"
         :value="value"
@@ -42,7 +42,7 @@ export default {
 @import 'src/assets/styles/variables.scss';
 @import 'src/assets/styles/functions.scss';
 
-.form-slider {
+.order-form-slider-input {
     -webkit-appearance: none;
     border: 1px solid $form-input-border-color;
     border-radius: 50px;

@@ -1,14 +1,16 @@
 <script>
+import SvgLoader from '../../.helpers/SvgLoader.vue';
 
 export default {
     name: 'LoremOrderIcon',
     components: {
+        SvgLoader
     },
     props: {
-        icon: {
-            type: Object,
-            default: null,
-        }
+        iconPath: {
+            type: String,
+            required: true,
+        },
     }
 }
 </script>
@@ -18,6 +20,9 @@ export default {
         <component
             class="order-icon__svg"
             :is="icon"
+        />
+        <SvgLoader 
+            :svgFileName="iconPath"
         />
     </div>
 </template>
@@ -30,6 +35,8 @@ export default {
     background-color: $order-icon-background-color;
     border: 5px solid $order-icon-border-color;
     border-radius: 50%;
+    width: 20px;
+    height: 20px;
 
     &__svg {
         position: absolute;
