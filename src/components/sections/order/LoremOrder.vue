@@ -208,6 +208,14 @@ $spaceBetweenIcons: 20;
 }
 
 @media (max-width: px($widthSizeM)) {
+    .order-steps {
+        &__item {
+            flex: 1 1 50%;
+            margin-top: em($spaceBetweenBlocksDefault/2);
+        }
+        
+    }
+    
     .order-steps-item {
         &::after {
             display: none;
