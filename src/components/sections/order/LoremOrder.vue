@@ -149,9 +149,8 @@ $spaceBetweenIcons: 20;
     flex-wrap: wrap;
 
     &__item {
-        flex: 1;
+        flex: 1 1 20%;
         min-width: em(100);
-        max-width: em(190);
         width: 100%;
         margin-top: em($spaceBetweenBlocksDefault);
     }
@@ -170,8 +169,8 @@ $spaceBetweenIcons: 20;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: em(60);
-        height: em(60);
+        width: em(100);
+        height: em(100);
 
     }
 
@@ -182,16 +181,38 @@ $spaceBetweenIcons: 20;
     &:not(:last-child)::after {
         content: '';
         position: absolute;
-        width: em($spaceBetweenBlocksDefault*2);
-        height: 6px;
-        top: 30px;
-        left: calc(68%);
+        width: calc(100% - 100px);
+        top: 50px;
+        height: 7px;
+        left: calc(50% + 50px);
         transform: scale(0.8);
+        z-index: -1;
         background-image: url('src/assets/images/line.png');
         background-size: cover;
     }
 
 }
 
+@media (max-width: px($widthSizeL)) {
+    .order-steps-item {
+        &__icon {
+            width: em(60);
+            height: em(60);
+        }
+
+        &:not(:last-child)::after {
+            top: 30px;
+        
+        }
+    }
+}
+
+@media (max-width: px($widthSizeM)) {
+    .order-steps-item {
+        &::after {
+            display: none;
+        }
+    }
+}
 
 </style>
