@@ -4,17 +4,20 @@ import LoremButton from '../../.helpers/LoremButton.vue';
 import LoremOrderFormInput from './LoremOrderFormInput.vue';
 import LoremOrderFormSlider from './LoremOrderFormSlider.vue';
 import LoremOrderFormFileInput from './LoremOrderFormFileInput.vue';
+import LoremOrderFormSelect from './LoremOrderFormSelect.vue';
 
 export default {
     name: 'LoremOrderForm',
     components: {
         LoremButton,
         LoremOrderFormInput,
+        LoremOrderFormSelect,
         LoremOrderFormFileInput,
         LoremOrderFormSlider
     },
     data() {
         return {
+
             form: {
                 action: '#',
                 method: 'post',
@@ -22,12 +25,72 @@ export default {
                 enctype: 'multipart/form-data',
                 inputs: [
                     {
-                        type: 'dropdown',
+                        type: 'select',
                         name: 'systemType',
                         placeholder: 'Выберите тип системы',
                         value: '',
-                        required: true,
-                        autocomplete: true,
+                        options: [
+                            {
+                                text: 'Sed ut perspiciatis',
+                                value: 0,
+                            },
+                            {
+                                text: 'Nemo enim ipsam',
+                                value: 1,
+                            },
+                            {
+                                text: 'Et harum quidem',
+                                value: 2,
+                            },
+                            {
+                                text: 'Temporibus autem',
+                                value: 3,
+                            },
+                            {
+                                text: 'Itaque earum rerum',
+                                value: 4,
+                            },
+                            {
+                                text: 'Itaque earum rerum',
+                                value: 4,
+                            },
+                            {
+                                text: 'Itaque earum rerum',
+                                value: 4,
+                            },
+                            {
+                                text: 'Itaque earum rerum',
+                                value: 4,
+                            },
+                            {
+                                text: 'Itaque earum rerum',
+                                value: 4,
+                            },
+                            {
+                                text: 'Itaque earum rerum',
+                                value: 4,
+                            },
+                            {
+                                text: 'Itaque earum rerum',
+                                value: 4,
+                            },
+                            {
+                                text: 'Itaque earum rerum',
+                                value: 4,
+                            },
+                            {
+                                text: 'Itaque earum rerum',
+                                value: 4,
+                            },
+                            {
+                                text: 'Itaque earum rerum',
+                                value: 4,
+                            },
+                            {
+                                text: 'Itaque earum rerum',
+                                value: 4,
+                            },
+                        ]
                     },
                     {
                         type: 'email',
@@ -74,23 +137,34 @@ export default {
         :action="form.action"
         :method="form.method"
         :name="form.name"
-        :enctype="enctype"
-        :target="target"
-        :novalidate="isNovalidate"
+        :enctype="form.enctype"
     >
         <div class="order-form__wrapper">
-            <lorem-order-form-input
-                class="order-form__item"
+            <div class="order-form-item order-form__item"
                 v-for="input in form.inputs"
-                :is="input.type === 'dropdown' ? 'lorem-form-input' : 'lorem-form-input'"
                 :key="input.key"
-                :type="input.type"
-                :name="input.name"
-                :placeholder="input.placeholder"
-                :value="input.value"
-                :required="input.required"
-                :autocomplete="input.autocomplete"
-            />
+
+            >
+                <lorem-order-form-select
+                    v-if="input.type === 'select'"
+                    class="order-form-item__input"
+                    
+                    :type="input.type"
+                    :name="input.name"
+                    :options="input.options"
+                />
+                <lorem-order-form-input
+                    v-else
+                    class="order-form-item__input"
+                    
+                    :type="input.type"
+                    :name="input.name"
+                    :placeholder="input.placeholder"
+                    :value="input.value"
+                    :required="input.required"
+                    :autocomplete="input.autocomplete"
+                />
+            </div>
             <div class="order-form-slider order-form__slider order-form__item">
                 <div class="order-form-slider-header">
                     <span>Sed ut perspiciatis, unde omnis iste natus</span>
@@ -142,6 +216,8 @@ $spaceBetweenInputs: 5;
     &__item {
         min-width: em(270, $form-input-font-size);
         max-width: 100%;
+        height: 47px;
+
         flex: 1 1 30%;
         width: 100%;
         margin: em($order-form-margin, $form-input-font-size) em($spaceBetweenInputs) 0;
@@ -188,6 +264,12 @@ $spaceBetweenInputs: 5;
     &_percent {
         white-space: nowrap;
         padding-left: em(30, 18);
+    }
+}
+
+.order-form-item {
+    &__input {
+        width: 100%;
     }
 }
 

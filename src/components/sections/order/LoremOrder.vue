@@ -59,16 +59,17 @@ export default {
                 <div class="order-steps order__steps">
                     <div
                         class="order-steps-item order-steps__item"
-                        v-for="step in steps"
+                        v-for="(step, index) in steps"
+                        :key="index"
                     >
                         <lorem-order-icon
                             class="order-steps-item__icon"
                             :iconPath="step.icon"
-                        >
-                        </lorem-order-icon>
+                        />
                         <span class="order-steps-item__subtitle">
                             {{ step.text }}
                         </span>
+   
                     </div>
                 </div>
                 <lorem-order-form />
@@ -144,11 +145,12 @@ $spaceBetweenIcons: 20;
 
 .order-steps {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     flex-wrap: wrap;
 
     &__item {
-        min-width: em(150);
+        flex: 1;
+        min-width: em(100);
         max-width: em(190);
         width: 100%;
         margin-top: em($spaceBetweenBlocksDefault);
@@ -156,6 +158,7 @@ $spaceBetweenIcons: 20;
 }
 
 .order-steps-item {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -167,13 +170,28 @@ $spaceBetweenIcons: 20;
         display: flex;
         justify-content: center;
         align-items: center;
-        width: em(100);
-        height: em(100);
+        width: em(60);
+        height: em(60);
+
     }
 
     &__subtitle {
         margin-top: em(20);
     }
+
+    &:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        width: em($spaceBetweenBlocksDefault*2);
+        height: 6px;
+        top: 30px;
+        left: calc(68%);
+        transform: scale(0.8);
+        background-image: url('src/assets/images/line.png');
+        background-size: cover;
+    }
+
 }
+
 
 </style>
