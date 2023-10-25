@@ -82,11 +82,12 @@ export default {
 @import 'src/assets/styles/variables.scss';
 @import 'src/assets/styles/functions.scss';
 
-$titleContext: 36;
-$subtitleContext: 18;
+$title-context: 36;
+$subtitle-context: 18;
 
-$spaceBetweenBlocksDefault: 80;
-$spaceBetweenIcons: 20;
+$space-between-blocks: 80;
+$space-between-icons: 20;
+$order-form-margin: 30;
 
 
 
@@ -114,7 +115,7 @@ $spaceBetweenIcons: 20;
     }
 
     &__title {
-        font-size: em($titleContext);
+        font-size: em($title-context);
         font-weight: 800;
         color: $text-color-secondary;
         
@@ -124,23 +125,23 @@ $spaceBetweenIcons: 20;
     }
 
     &__subtitle {
-        margin-top: em($subtitleContext);
+        margin-top: em($subtitle-context);
     }
 
     &__steps {
         width: 100%;
-        margin: 0 em(-$spaceBetweenIcons);
+        margin: 0 em(-$space-between-icons);
     }
 
     &__form {
         width: 100%;
-        margin-top: em($spaceBetweenBlocksDefault - $order-form-margin);
+        margin-top: em($space-between-blocks - $order-form-margin);
     }
 }
 
 .order-subtitle {
-    font-size: em($subtitleContext);
-    color: $order-subtitle-color;
+    font-size: em($subtitle-context);
+    color: rgba(187, 187, 187, 1);
 }
 
 .order-steps {
@@ -152,7 +153,7 @@ $spaceBetweenIcons: 20;
         flex: 1 1 20%;
         min-width: em(100);
         width: 100%;
-        margin-top: em($spaceBetweenBlocksDefault);
+        margin-top: em($space-between-blocks);
     }
 }
 
@@ -162,8 +163,8 @@ $spaceBetweenIcons: 20;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    color: $order-icon-color;
-    padding: 0 em($spaceBetweenIcons);
+    color: rgba(255, 255, 255, 1);
+    padding: 0 em($space-between-icons);
 
     &__icon {
         display: flex;
@@ -193,7 +194,7 @@ $spaceBetweenIcons: 20;
 
 }
 
-@media (max-width: px($widthSizeL)) {
+@media (max-width: px($width-size-L)) {
     .order-steps-item {
         &__icon {
             width: em(60);
@@ -207,11 +208,11 @@ $spaceBetweenIcons: 20;
     }
 }
 
-@media (max-width: px($widthSizeM)) {
+@media (max-width: px($width-size-M)) {
     .order-steps {
         &__item {
             flex: 1 1 50%;
-            margin-top: em($spaceBetweenBlocksDefault/2);
+            margin-top: em(calc($space-between-blocks/2));
         }
         
     }
@@ -221,6 +222,26 @@ $spaceBetweenIcons: 20;
             display: none;
         }
     }
+}
+
+
+.order {
+
+    &__progress {
+        display: flex;
+        justify-content: space-evenly;
+        margin-bottom: 90px;
+
+        @media (max-width: 1330px) {
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+    }
+
+    &__text {
+        margin-bottom: 80px;
+    }
+
 }
 
 </style>

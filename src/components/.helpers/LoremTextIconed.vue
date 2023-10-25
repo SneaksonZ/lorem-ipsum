@@ -1,14 +1,3 @@
-<template>
-    <div class="text-iconed">
-        <SvgLoader 
-            :class="iconClassNames"
-            :svgFileName="iconPath"
-        />
-        <span v-if="!url" class="text-iconed__span" :class="textClassNames"> {{ text }} </span>
-        <a v-else :href="url" class="text-iconed__link" :class="textClassNames"> {{ text }} </a>
-    </div>
-</template>
-  
 <script>
 import SvgLoader from '/src/components/.helpers/SvgLoader.vue';
 
@@ -32,7 +21,18 @@ export default {
     },
 }
 </script>
-  
+
+<template>
+    <div class="text-iconed">
+        <SvgLoader 
+            :class="iconClassNames"
+            :svgFileName="iconPath"
+        />
+        <span v-if="!url" class="text-iconed__span" :class="textClassNames"> {{ text }} </span>
+        <a v-else :href="url" class="text-iconed__link" :class="textClassNames"> {{ text }} </a>
+    </div>
+</template>
+
 <style lang="scss">
 .text-iconed {
     display: flex;

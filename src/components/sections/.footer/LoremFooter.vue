@@ -11,7 +11,7 @@ export default {
             copyright: '2018 «LoremIpsum.net» Все права защищены.',
             payments: [
                 {
-                    text: 'Qiwi wallet',
+                    text: 'QIWI Wallet',
                     icon: 'QiwiIcon.svg'
                 },
                 { 
@@ -45,7 +45,7 @@ export default {
         <div class="container">
             <div class="footer__wrapper">
                 <div class="footer-column footer__column">
-                    <div class="footer-column__copyright">
+                    <div class="footer-column__copyright footer-column__item">
                         &copy; {{ copyright }}
                     </div>
                 </div>
@@ -55,8 +55,6 @@ export default {
                     >
                         <lorem-text-iconed 
                             :iconPath="payment.icon"
-                            :iconSize="payment.iconSize"
-                            :iconColor="white"
                             :text="payment.text"
                             :textClassNames="'footer-column-item__payment'"
                         />
@@ -68,8 +66,6 @@ export default {
                     >
                         <lorem-text-iconed 
                             :iconPath="contact.icon"
-                            :iconSize="contact.iconSize"
-                            :iconColor="white"
                             :text="contact.text"
                             :textClassNames="'footer-column__link'"
                             :url="contact.href"
@@ -89,7 +85,7 @@ $font-size: 13;
 $itemsMargin: 5;
 
 .footer {
-    background-color: $footer-background-color;
+    background-color: rgba(61, 64, 80, 1);
     color: rgba(255, 255, 255, 1);
     font-size: em(13);
 
@@ -112,7 +108,7 @@ $itemsMargin: 5;
     flex: 1;
     flex-wrap: wrap;
     text-align: center;
-    height: 100%;
+    height: 50px;
     padding: em(5);
 
     &__item {
@@ -148,7 +144,7 @@ $itemsMargin: 5;
     }
 }
 
-@media (max-width: px($widthSizeM)) {
+@media (max-width: px($width-size-M)) {
     .footer {
         &__wrapper {
             flex-direction: column;

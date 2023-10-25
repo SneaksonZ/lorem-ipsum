@@ -46,10 +46,12 @@ export default {
 @import 'src/assets/styles/variables.scss';
 @import 'src/assets/styles/functions.scss';
 
+$form-input-color: rgba(39, 39, 51, 1);
+
 .order-form-input {
     font-size: em($form-input-font-size);
     color: $form-input-color;
-    background-color: $form-input-bg-color;
+    background-color: rgba(255, 255, 255, 0.85);
     border: em(1, $form-input-font-size) solid $form-input-border-color;
     border-radius: 3px;
     padding: em(12, $form-input-font-size) em(10, $form-input-font-size);

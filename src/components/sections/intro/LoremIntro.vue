@@ -161,13 +161,13 @@ $fontSizeMobi: 16;
     padding: em(15, $button-font-size) 0;
 }
 
-@media (max-width: px($widthSizeL)) {
+@media (max-width: px($width-size-L)) {
     .intro {
-        background-color: $intro-mobi-background-color;
+        background-color: rgba(255, 255, 255, 0.6);
     }
 }
 
-@media (max-width: px($widthSizeM)) {
+@media (max-width: px($width-size-M)) {
     .intro {
         &__wrapper {
             margin: em(150) 0 em(50);

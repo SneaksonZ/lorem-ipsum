@@ -18,10 +18,6 @@ export default {
 
 <template>
     <div class="order-icon">
-        <component
-            class="order-icon__svg"
-            :is="icon"
-        />
         <SvgLoader 
             :svgFileName="iconPath"
         />
@@ -33,8 +29,8 @@ export default {
 
 .order-icon {
     position: relative;
-    background-color: $order-icon-background-color;
-    border: 5px solid $order-icon-border-color;
+    background-color: rgba(62, 156, 220, 1);
+    border: 5px solid rgba(40, 102, 144, 1);
     border-radius: 50%;
     width: 20px;
     height: 20px;
@@ -44,6 +40,10 @@ export default {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+    }
+
+    .order-icon > svg {
+        width: 20px;
     }
 }
 </style>

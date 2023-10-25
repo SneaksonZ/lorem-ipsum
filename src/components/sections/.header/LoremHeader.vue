@@ -71,6 +71,8 @@ export default {
 @import 'src/assets/styles/functions.scss';
 
 $nav-item-font-size: 13;
+$header-background-color: rgba(16, 16, 29, 0.9);
+
 
 .header {
     position: fixed;

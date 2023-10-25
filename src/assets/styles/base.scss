@@ -4,17 +4,17 @@ body {
 
 .container {
   height: 100%;
-  padding: 0 witdhToPaddings($containerDefault, $widthDefault);
+  padding: 0 witdhToPaddings($container-default, $width-default);
 }
 
-@media (max-width: px($widthSizeL)) {
+@media (max-width: px($width-size-L)) {
   .container {
-    padding: 0 witdhToPaddings($containerSizeL, $widthSizeL);
+    padding: 0 witdhToPaddings($container-size-L, $width-size-L);
   }
 }
 
-@media (max-width: px($widthSizeS)) {
+@media (max-width: px($width-size-S)) {
   .container {
-    padding: 0 witdhToPaddings($containerSizeS, $widthSizeS);
+    padding: 0 witdhToPaddings($container-size-S, $width-size-S);
   }
 }

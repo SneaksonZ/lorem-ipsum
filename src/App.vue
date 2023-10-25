@@ -12,9 +12,6 @@ export default {
         LoremIntro,
         LoremOrder,
     },
-    data() {
-
-    },
 }
 </script>
 

@@ -1,17 +1,3 @@
-<template>
-    <div>
-        <label class="order-form-file-button order-form-file__button" for="fileInput"> 
-            <lorem-text-iconed 
-                :iconPath="icon"
-                :iconSize="iconSize"
-                :iconColor="iconColor"
-                :text="fileInputText"
-            />
-        </label>
-        <input id="fileInput" class="order-form-file" type="file" ref="fileInput" @change="handleFileUpload" />
-    </div>
-</template>
-  
 <script>
 import LoremTextIconed from '../../.helpers/LoremTextIconed.vue';
 
@@ -35,6 +21,18 @@ export default {
 }
 </script>
   
+<template>
+    <div>
+        <label class="order-form-file-button order-form-file__button" for="fileInput"> 
+            <lorem-text-iconed 
+                :iconPath="icon"
+                :text="fileInputText"
+            />
+        </label>
+        <input id="fileInput" class="order-form-file" type="file" ref="fileInput" @change="handleFileUpload" />
+    </div>
+</template>
+
 <style lang="scss">
 @import 'src/assets/styles/variables.scss';
 @import 'src/assets/styles/functions.scss';
@@ -45,7 +43,7 @@ export default {
     &__button {
         width: 100%;
         color: $text-color-primary;
-        background-color: $form-input-file-bg-color;
+        background-color: rgba(255, 255, 255, 1);
         margin: 0 5px;
     }
 }
@@ -56,7 +54,7 @@ export default {
     text-align: center;
     align-items: center;
     justify-content: center;
-    border: 2px solid $form-input-file-border-color;
+    border: 2px solid rgba(62, 156, 220, 1);
     border-radius: 3px;
     padding: em(12, $form-input-file-font-size) 0;
     overflow: hidden;

@@ -46,14 +46,14 @@ export default {
     -webkit-appearance: none;
     border: 1px solid $form-input-border-color;
     border-radius: 50px;
-    background-color: $form-slider-background-color;
+    background-color: rgba(255, 255, 255, 0.7);
 
     &::-webkit-slider-thumb {
         -webkit-appearance: none;
         width: em(25);
         height: em(25);
-        background-color: $icon-bg-color;
-        border: 3px solid $icon-border-color;
+        background-color: rgba(62, 156, 220, 1);
+        border: 3px solid rgba(40, 102, 144, 1);
         border-radius: 50%;
 
         &:hover {

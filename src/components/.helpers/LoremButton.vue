@@ -31,15 +31,15 @@ export default {
         text-transform: uppercase;
 
         &_primary {
-            color: $button-text-color-primary;
-            background-color: $button-bg-color-primary;
-            border: 1px solid $button-border-color-primary;
+            color: rgba(255, 255, 255, 1);
+            background-color: rgba(62, 156, 220, 1);
+            border: 1px solid rgba(255, 255, 255, 1);
         }
 
         &_secondary {
-            color: $button-text-color-secondary;
-            background-color: $button-bg-color-secondary;
-            border: 1px solid $button-border-color-secondary;
+            color: rgba(42, 43, 48, 1);
+            background-color: rgba(255, 255, 255, 1);
+            border: 1px solid rgba(111, 109, 123, 1);
         }
 
         &:hover:not(:disabled) {
